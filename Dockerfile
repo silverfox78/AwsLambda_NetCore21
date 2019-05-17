@@ -5,9 +5,6 @@ MAINTAINER Samuel Barrera
 LABEL version="1.0"
 LABEL description="Docker image for CI of .NET Core code to Amazon Lambda"
 
-RUN locale-gen C.UTF-8 && /usr/sbin/update-locale LANG=C.UTF-8
-ENV LC_ALL C.UTF-8
-
 RUN apt-get clean
 RUN apt-get -y update
 RUN apt-get -y install zip
