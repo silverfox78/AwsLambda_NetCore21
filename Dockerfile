@@ -3,10 +3,12 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 MAINTAINER Samuel Barrera
 
-ENV PATH="${PATH}:/root/.dotnet/tools"
-
 RUN apt-get -y update
 RUN apt-get -y install zip
+RUN dotnet tool install -g dotnet-serve
+ENV PATH="${PATH}:/root/.dotnet/tools"
+RUN dotnet tool install -g dotnetsay
+RUN dotnetsay
 RUN dotnet tool install -g dotnetsay
 RUN dotnet tool install -g Amazon.Lambda.Tools
 RUN dotnet tool update -g Amazon.Lambda.Tools
