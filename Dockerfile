@@ -3,6 +3,8 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 MAINTAINER Samuel Barrera
 
+ENV PATH="${PATH}:/root/.dotnet/tools"
+
 RUN apt-get -y update
 RUN apt-get -y install zip
 RUN dotnet tool install -g dotnetsay
